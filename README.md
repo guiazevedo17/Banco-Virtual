@@ -1,4 +1,3 @@
 # Banco-Virtual em JAVA
 
-
-testando Git no MAC
+Desenvolvido como projeto para matéria de Paradigmas de Programação B
