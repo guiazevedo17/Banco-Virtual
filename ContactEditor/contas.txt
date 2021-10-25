@@ -1,0 +1,3 @@
+Joao;123;G
+Roberto;senha;C
+Dorivaldo;abc;G
