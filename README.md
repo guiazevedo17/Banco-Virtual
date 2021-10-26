@@ -2,7 +2,8 @@
 
 Desenvolvido como projeto para matéria de Paradigmas de Programação B
 
-Usuário: Admin	
+Usuário: Admin
+
 Senha:   123
 
 Guilherme Gomes de Azevado - 20130175
