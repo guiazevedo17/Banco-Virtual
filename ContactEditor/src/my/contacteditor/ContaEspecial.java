@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 public class ContaEspecial extends Conta{
     private double Limite;
     private String Tipo = "Especial";
+    private double taxaJuros = 0;
 
     public String getTipo() {
         return Tipo;

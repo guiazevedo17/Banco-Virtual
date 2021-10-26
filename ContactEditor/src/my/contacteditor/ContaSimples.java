@@ -10,8 +10,11 @@ package my.contacteditor;
  */
 public class ContaSimples extends Conta{
     private String Tipo = "Simples";
+    private double taxaJuros = 0;
+    private double Limite=0;
     
     public String getTipo() {
         return Tipo;
     }
+    
 }

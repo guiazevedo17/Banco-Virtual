@@ -22,27 +22,28 @@ public class Cliente extends Usuario{
         return Contas;
     }   
        
-    public void cadastraContaSimples(String Nome){
+    public void cadastraContaSimples(String Nome, int nro){
         ContaSimples CS = new ContaSimples();
         CS.setExtrato("");
         CS.setSaldo(0);
         Contas.add(CS);
-        CS.setNumero(Contas.size()*1245%10);       
+        CS.setNumero(nro);       
+        
     }
     
-    public void cadastraContaEspecial(String Nome){
+    public void cadastraContaEspecial(String Nome, int nro){
         ContaEspecial CE = new ContaEspecial();
         CE.setExtrato("");
         CE.setSaldo(0);
         Contas.add(CE);
-        CE.setNumero(Contas.size()*1245%10);      
+        CE.setNumero(nro);     
     }
     
-    public void cadastraContaPoupanca(String Nome){
+    public void cadastraContaPoupanca(String Nome, int nro){
         ContaPoupanca CP = new ContaPoupanca();
         CP.setExtrato("");
         CP.setSaldo(0);
         Contas.add(CP);
-        CP.setNumero(Contas.size()*1245%10);      
+        CP.setNumero(nro);      
     }           
 }

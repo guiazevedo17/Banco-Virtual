@@ -278,6 +278,11 @@ public class MenuCliente extends javax.swing.JFrame {
         Banco1.setText("Banco Paradigmas");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Conta Simples", "Conta Especial", "Conta Poupanca" }));
+        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox1MouseClicked(evt);
+            }
+        });
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -357,6 +362,12 @@ public class MenuCliente extends javax.swing.JFrame {
 
         jLabel5.setText("Valor:");
 
+        jComboBox6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox6MouseClicked(evt);
+            }
+        });
+
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField4ActionPerformed(evt);
@@ -427,6 +438,11 @@ public class MenuCliente extends javax.swing.JFrame {
         Banco3.setText("Banco Paradigmas");
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Conta Simples", "Conta Especial", "Conta Simples" }));
+        jComboBox3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox3MouseClicked(evt);
+            }
+        });
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -507,6 +523,11 @@ public class MenuCliente extends javax.swing.JFrame {
         Banco4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/banco.png"))); // NOI18N
         Banco4.setText("Banco Paradigmas");
 
+        jComboBox4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox4MouseClicked(evt);
+            }
+        });
         jComboBox4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox4ActionPerformed(evt);
@@ -546,15 +567,17 @@ public class MenuCliente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
                         .addComponent(Banco4))
                     .addGroup(PVerificarSaldoLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(PVerificarSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel9))
+                        .addGap(3, 3, 3)
+                        .addGroup(PVerificarSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PVerificarSaldoLayout.createSequentialGroup()
+                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21)
+                                .addComponent(jButton4))
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         PVerificarSaldoLayout.setVerticalGroup(
@@ -570,14 +593,15 @@ public class MenuCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PVerificarSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(jButton4))
+                .addGap(18, 18, 18)
                 .addGroup(PVerificarSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PVerificarSaldoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)
-                        .addComponent(jButton4)
-                        .addComponent(jLabel9))
+                    .addComponent(jLabel9)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("4", PVerificarSaldo);
@@ -593,6 +617,11 @@ public class MenuCliente extends javax.swing.JFrame {
         Banco5.setText("Banco Paradigmas");
 
         jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Conta Simples", "Conta Especial", "Conta Simples" }));
+        jComboBox5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox5MouseClicked(evt);
+            }
+        });
         jComboBox5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox5ActionPerformed(evt);
@@ -847,6 +876,26 @@ public class MenuCliente extends javax.swing.JFrame {
         AlteraSenha(new String(jPasswordField1.getPassword()), new String(jPasswordField2.getPassword()));
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
+        AtualizaTodosBox();
+    }//GEN-LAST:event_jComboBox1MouseClicked
+
+    private void jComboBox6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox6MouseClicked
+        AtualizaTodosBox();
+    }//GEN-LAST:event_jComboBox6MouseClicked
+
+    private void jComboBox3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox3MouseClicked
+        AtualizaTodosBox();
+    }//GEN-LAST:event_jComboBox3MouseClicked
+
+    private void jComboBox4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox4MouseClicked
+        AtualizaTodosBox();
+    }//GEN-LAST:event_jComboBox4MouseClicked
+
+    private void jComboBox5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox5MouseClicked
+        AtualizaTodosBox();
+    }//GEN-LAST:event_jComboBox5MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -882,15 +931,16 @@ public class MenuCliente extends javax.swing.JFrame {
     }
     
     public void AbrirConta(int tipo){
+        int nro = nroContas(ListaUsuarios);
         switch (tipo) {
             case 0:
-                ClienteLogado.cadastraContaSimples(ClienteLogado.getNome());
+                ClienteLogado.cadastraContaSimples(ClienteLogado.getNome(), nro);
                 break;
             case 1:
-                ClienteLogado.cadastraContaEspecial(ClienteLogado.getNome());
+                ClienteLogado.cadastraContaEspecial(ClienteLogado.getNome(), nro);
                 break;
             default:
-                ClienteLogado.cadastraContaPoupanca(ClienteLogado.getNome());
+                ClienteLogado.cadastraContaPoupanca(ClienteLogado.getNome(), nro);
                 break;
         }
         JOptionPane.showMessageDialog(null, "Conta criada com suceso!");  
@@ -901,6 +951,18 @@ public class MenuCliente extends javax.swing.JFrame {
         AtualizaBox(jComboBox4);
         AtualizaBox(jComboBox5);
         AtualizaBox(jComboBox6);
+    }
+    
+    public int nroContas(ArrayList<Gerente> Lista){
+        int Quantidade=0;
+        for(int i=0; i<Lista.size(); i++){
+            for(int j=0;j<Lista.get(i).getClientes().size(); j++){
+                for(int k=0; k<Lista.get(i).getClientes().get(j).getContas().size();k++){
+                    Quantidade++;
+                }
+            }
+        }
+        return Quantidade;
     }
     
     public void AtualizaBox(JComboBox Caixa){
@@ -925,30 +987,41 @@ public class MenuCliente extends javax.swing.JFrame {
         }           
     }
     
-    public boolean AlteraSenha(String SenhaAtual, String SenhaNova){
+        public boolean AlteraSenha(String SenhaAtual, String SenhaNova){
+        String dados = "";
+        int flag=0;
         if(SenhaAtual.isEmpty() || SenhaNova.isEmpty())JOptionPane.showMessageDialog(null, "Complete os dados corretamente!");  
         
         try {
+              
             File ArquivoContas = new File("D:\\Usuario\\Documents\\PUC-Campinas\\4 semestre\\Paradigmas B\\Projeto/contas.txt");
             Scanner LeContas = new Scanner(ArquivoContas);
             while(LeContas.hasNextLine())
-            {                             
+            {         
+                
                 String TipoCadastrado = LeContas.nextLine();
+                dados = dados + TipoCadastrado + "\n";
                 String NomeCadastrado = LeContas.nextLine();
+                dados = dados + NomeCadastrado + "\n";
                 String SenhaCadastrada = LeContas.nextLine();
-                LeContas.remove();
                 
                 if(NomeCadastrado.equals(ClienteLogado.getNome()) && SenhaAtual.equals(SenhaCadastrada))
                 {
-                    FileWriter Arq = new FileWriter("D:\\Usuario\\Documents\\PUC-Campinas\\4 semestre\\Paradigmas B\\Projeto/contas.txt", true);
-                    PrintWriter EscreveContas = new PrintWriter(Arq);
-                    EscreveContas.write(SenhaCadastrada.replace(SenhaCadastrada, SenhaNova));  
-                    EscreveContas.printf(LeContas.locale(), SenhaNova);
-                    EscreveContas.close();
-                    JOptionPane.showMessageDialog(null, "Senha alterada com suceso!");  
-                    return true;
-                }                   
+                    flag=1;
+                    dados = dados + SenhaNova + "\n";   
+                    ClienteLogado.setSenha(SenhaNova);
+                }  
+                else dados = dados + SenhaCadastrada + "\n";
             } 
+            if(flag == 1){
+                FileWriter Arq = new FileWriter("D:\\Usuario\\Documents\\PUC-Campinas\\4 semestre\\Paradigmas B\\Projeto/contas.txt", false);
+                PrintWriter EscreveContas = new PrintWriter(Arq); 
+                EscreveContas.println(dados);
+                EscreveContas.flush();
+                EscreveContas.close();
+                JOptionPane.showMessageDialog(null, "Senha alterada com suceso!");  
+                return true;
+            }
         }
         catch (IOException Ex) {
            Ex.printStackTrace();      

@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Gerente extends Usuario{
     private ArrayList<Cliente> Clientes = new ArrayList<>();
-
+            
     public ArrayList<Cliente> getClientes() {
         return Clientes;
     }

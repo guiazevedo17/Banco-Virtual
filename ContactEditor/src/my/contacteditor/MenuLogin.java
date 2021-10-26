@@ -28,7 +28,7 @@ public class MenuLogin extends javax.swing.JFrame{
         PrimeiroAcesso = segundoacesso;
         
         if(PrimeiroAcesso)registraAdmin();
-        teste();
+        //teste();
     }
 
     /**
@@ -165,7 +165,7 @@ public class MenuLogin extends javax.swing.JFrame{
         });
     }
     
-    public void teste(){
+    /*public void teste(){
         for(int i=0;i<ListaUsuarios.size(); i++)
                         {
                             System.out.println("Gerente: " + ListaUsuarios.get(i).getNome());
@@ -176,7 +176,7 @@ public class MenuLogin extends javax.swing.JFrame{
                                 }
                             }
                         }
-    }
+    }*/
     
     public void registraAdmin(){
         try{
@@ -227,7 +227,7 @@ public class MenuLogin extends javax.swing.JFrame{
                                 dispose();
                                 return true;
                             }
-                            
+                                                      
                             for(int j=0; j<ListaUsuarios.get(i).getClientes().size(); j++){
                                 if(ListaUsuarios.get(i).getClientes().get(j).getNome().equals(Nome)
                                 && ListaUsuarios.get(i).getClientes().get(j).getSenha().equals(Senha))
@@ -240,17 +240,17 @@ public class MenuLogin extends javax.swing.JFrame{
                                 }                                 
                             }
                         }                                                                                        
-                    }      
-                    CampoNome.setText("");
-                    CampoSenha.setText("");
-                    JOptionPane.showMessageDialog(null, "Seja incorreta, ou usuário inválido");
-                }                                   
+                    }
+                }                   
             }            
             catch(IOException Ex)
             {
                Ex.printStackTrace();          
             }
         }
+        CampoNome.setText("");
+        CampoSenha.setText("");
+        JOptionPane.showMessageDialog(null, "Seja incorreta, ou usuário inválido");
         return false;
     }
     

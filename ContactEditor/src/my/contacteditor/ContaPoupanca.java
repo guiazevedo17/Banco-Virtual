@@ -11,6 +11,7 @@ package my.contacteditor;
 public class ContaPoupanca extends Conta{
     private double TaxaDeJuros;
     private String Tipo = "Poupanca";
+    private double Limite=0;
 
     public void setTaxaDeJuros(double TaxaDeJuros) {
         this.TaxaDeJuros = TaxaDeJuros;

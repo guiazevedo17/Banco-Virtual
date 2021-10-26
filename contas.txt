@@ -1,9 +1,3 @@
 Gerente
 Admin
 123
-Gerente
-Roger
-a
-Cliente
-Gui
-a

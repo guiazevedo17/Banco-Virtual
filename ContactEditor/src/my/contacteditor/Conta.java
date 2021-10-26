@@ -14,6 +14,22 @@ public class Conta extends Usuario{
     private double Limite;
     private double taxaJuros;
 
+    public void setTaxaJuros(double taxaJuros) {
+        this.taxaJuros = taxaJuros;
+    }
+
+    public void setLimite(double Limite) {
+        this.Limite = Limite;
+    }
+
+    public double getLimite() {
+        return Limite;
+    }
+
+    public double getTaxaJuros() {
+        return taxaJuros;
+    }
+    
     public void setNumero(int Numero) {
         this.Numero = Numero;
     }
@@ -55,10 +71,10 @@ public class Conta extends Usuario{
     
     public boolean Retira(double valor){
         if(valor >= 0){
-            if(valor > this.Saldo){
+            if(valor >= this.Saldo){
                 JOptionPane.showMessageDialog(null, "Saldo insuficiente!");
                 return false;
-        }
+            }
             else{
                 this.Saldo -= valor;
                 JOptionPane.showMessageDialog(null, "Saque realizado!");

@@ -4,10 +4,12 @@
  */
 package my.contacteditor;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
@@ -86,6 +88,10 @@ public class MenuGerencia extends javax.swing.JFrame{
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         jTextField5 = new javax.swing.JTextField();
+        jTextField20 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jTextField21 = new javax.swing.JTextField();
         PAplicarDinheiro = new javax.swing.JPanel();
         Banco3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -297,6 +303,7 @@ public class MenuGerencia extends javax.swing.JFrame{
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextArea1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jTextArea1.setEnabled(false);
         jTextArea1.setMaximumSize(new java.awt.Dimension(200, 7000));
         jScrollPane1.setViewportView(jTextArea1);
@@ -339,7 +346,7 @@ public class MenuGerencia extends javax.swing.JFrame{
                             .addComponent(jSeparator3)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PVerificarClienteLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, Short.MAX_VALUE)
                                 .addComponent(Banco1)))
                         .addContainerGap())))
         );
@@ -364,7 +371,7 @@ public class MenuGerencia extends javax.swing.JFrame{
                 .addGroup(PVerificarClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(166, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("1", PVerificarCliente);
@@ -443,6 +450,26 @@ public class MenuGerencia extends javax.swing.JFrame{
             }
         });
 
+        jTextField20.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField20.setEnabled(false);
+        jTextField20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField20ActionPerformed(evt);
+            }
+        });
+
+        jLabel33.setText("Limite:");
+
+        jLabel34.setText("Taxa Juros:");
+
+        jTextField21.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jTextField21.setEnabled(false);
+        jTextField21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField21ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PVerificarContaLayout = new javax.swing.GroupLayout(PVerificarConta);
         PVerificarConta.setLayout(PVerificarContaLayout);
         PVerificarContaLayout.setHorizontalGroup(
@@ -450,38 +477,49 @@ public class MenuGerencia extends javax.swing.JFrame{
             .addGroup(PVerificarContaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator4)
-                    .addComponent(jSeparator5)
                     .addGroup(PVerificarContaLayout.createSequentialGroup()
                         .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator4)
+                            .addComponent(jSeparator5)
                             .addGroup(PVerificarContaLayout.createSequentialGroup()
                                 .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
-                                        .addComponent(jTextField5))
-                                    .addComponent(jLabel9))
-                                .addGap(18, 18, 18)
-                                .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel4)
                                     .addGroup(PVerificarContaLayout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(55, 55, 55)
-                                        .addComponent(jLabel8))
-                                    .addGroup(PVerificarContaLayout.createSequentialGroup()
-                                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(14, 14, 14)
-                                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane2)))
-                            .addComponent(jLabel4)
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jButton2)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(18, 18, 18))
+                    .addGroup(PVerificarContaLayout.createSequentialGroup()
+                        .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel6)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 259, Short.MAX_VALUE)
+                                .addComponent(jTextField5))
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel10)
                             .addGroup(PVerificarContaLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2)))
-                        .addGap(0, 311, Short.MAX_VALUE)))
-                .addGap(18, 18, 18))
+                                .addComponent(jLabel7)
+                                .addGap(55, 55, 55)
+                                .addComponent(jLabel8))
+                            .addGroup(PVerificarContaLayout.createSequentialGroup()
+                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                        .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel34))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33)
+                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(98, 98, 98))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PVerificarContaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Banco2)
@@ -507,13 +545,17 @@ public class MenuGerencia extends javax.swing.JFrame{
                 .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addGap(1, 1, 1)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel33))
+                .addGap(0, 0, 0)
                 .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PVerificarContaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel9))
@@ -566,7 +608,7 @@ public class MenuGerencia extends javax.swing.JFrame{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PAplicarDinheiroLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 336, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 348, Short.MAX_VALUE)
                 .addComponent(Banco3)
                 .addGap(11, 11, 11))
             .addGroup(PAplicarDinheiroLayout.createSequentialGroup()
@@ -584,16 +626,16 @@ public class MenuGerencia extends javax.swing.JFrame{
                             .addGroup(PAplicarDinheiroLayout.createSequentialGroup()
                                 .addComponent(jLabel13)
                                 .addGap(17, 17, 17)))
-                        .addGroup(PAplicarDinheiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
-                        .addGap(25, 25, 25)
+                        .addGroup(PAplicarDinheiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                            .addComponent(jTextField4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4))
                     .addGroup(PAplicarDinheiroLayout.createSequentialGroup()
                         .addComponent(jLabel14)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(482, Short.MAX_VALUE))
         );
         PAplicarDinheiroLayout.setVerticalGroup(
             PAplicarDinheiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -623,7 +665,7 @@ public class MenuGerencia extends javax.swing.JFrame{
                 .addGroup(PAplicarDinheiroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel14)
                     .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("3", PAplicarDinheiro);
@@ -685,7 +727,7 @@ public class MenuGerencia extends javax.swing.JFrame{
             .addGroup(PTransferenciasLayout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addContainerGap(387, Short.MAX_VALUE))
         );
         PTransferenciasLayout.setVerticalGroup(
             PTransferenciasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -734,10 +776,16 @@ public class MenuGerencia extends javax.swing.JFrame{
         jLabel21.setText("Valor desejado:");
 
         jButton6.setText("Retirar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jLabel22.setText("Saldo da conta:");
 
         jTextField15.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jTextField15.setDisabledTextColor(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout PGrandesRetiradasLayout = new javax.swing.GroupLayout(PGrandesRetiradas);
         PGrandesRetiradas.setLayout(PGrandesRetiradasLayout);
@@ -768,16 +816,17 @@ public class MenuGerencia extends javax.swing.JFrame{
                             .addGroup(PGrandesRetiradasLayout.createSequentialGroup()
                                 .addComponent(jLabel21)
                                 .addGap(17, 17, 17)))
-                        .addGroup(PGrandesRetiradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField14)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
-                        .addGap(25, 25, 25)
-                        .addComponent(jButton6))
+                        .addGroup(PGrandesRetiradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField14, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(jTextField13))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6)
+                        .addGap(498, 498, 498))
                     .addGroup(PGrandesRetiradasLayout.createSequentialGroup()
                         .addComponent(jLabel22)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(545, Short.MAX_VALUE))
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         PGrandesRetiradasLayout.setVerticalGroup(
             PGrandesRetiradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -807,7 +856,7 @@ public class MenuGerencia extends javax.swing.JFrame{
                 .addGroup(PGrandesRetiradasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel22)
                     .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(225, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("5", PGrandesRetiradas);
@@ -849,6 +898,11 @@ public class MenuGerencia extends javax.swing.JFrame{
 
         jButton9.setText("Aplicar");
         jButton9.setEnabled(false);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PEditarLayout = new javax.swing.GroupLayout(PEditar);
         PEditar.setLayout(PEditarLayout);
@@ -861,7 +915,7 @@ public class MenuGerencia extends javax.swing.JFrame{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PEditarLayout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addComponent(jLabel23)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
                 .addComponent(Banco6)
                 .addGap(11, 11, 11))
             .addGroup(PEditarLayout.createSequentialGroup()
@@ -924,7 +978,7 @@ public class MenuGerencia extends javax.swing.JFrame{
                     .addComponent(jLabel27)
                     .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9))
-                .addContainerGap(272, Short.MAX_VALUE))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("6", PEditar);
@@ -947,7 +1001,7 @@ public class MenuGerencia extends javax.swing.JFrame{
 
         jLabel28.setText("Nome:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Cliente", "Gerente" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cliente", "Gerente" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -982,25 +1036,23 @@ public class MenuGerencia extends javax.swing.JFrame{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PCadastrarLayout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 520, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 532, Short.MAX_VALUE)
                 .addComponent(Banco7)
                 .addGap(11, 11, 11))
             .addGroup(PCadastrarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
-                    .addComponent(jLabel32))
-                .addGap(10, 10, 10)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel31))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
-                    .addComponent(jPasswordField1))
-                .addGap(30, 30, 30)
-                .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(PCadastrarLayout.createSequentialGroup()
-                        .addComponent(jLabel31)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton3))
+                    .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jTextField18, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                        .addComponent(jPasswordField1))
+                    .addComponent(jComboBox2, 0, 119, Short.MAX_VALUE))
+                .addGap(12, 12, 12)
+                .addComponent(jButton3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PCadastrarLayout.setVerticalGroup(
@@ -1019,16 +1071,17 @@ public class MenuGerencia extends javax.swing.JFrame{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel28)
-                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel32))
+                .addGap(8, 8, 8)
+                .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addGroup(PCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel32)))
-                .addContainerGap(307, Short.MAX_VALUE))
+                    .addComponent(jLabel31)
+                    .addComponent(jButton3))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("7", PCadastrar);
@@ -1077,7 +1130,7 @@ public class MenuGerencia extends javax.swing.JFrame{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PAlteraSenhaLayout.createSequentialGroup()
                 .addGap(9, 9, 9)
                 .addComponent(jLabel30)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 436, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 448, Short.MAX_VALUE)
                 .addComponent(Banco8)
                 .addGap(11, 11, 11))
             .addGroup(PAlteraSenhaLayout.createSequentialGroup()
@@ -1117,7 +1170,7 @@ public class MenuGerencia extends javax.swing.JFrame{
                     .addComponent(jLabel35))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton10)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("8", PAlteraSenha);
@@ -1171,7 +1224,7 @@ public class MenuGerencia extends javax.swing.JFrame{
     }//GEN-LAST:event_ButtonLimitesActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        Transfere(Integer.valueOf(jTextField10.getText()) ,Integer.valueOf(jTextField12.getText()),Double.valueOf(jTextField11.getText()));
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1192,7 +1245,7 @@ public class MenuGerencia extends javax.swing.JFrame{
     }//GEN-LAST:event_jTextField18ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        
+        AlteraSenha(new String(jPasswordField3.getPassword()), new String(jPasswordField2.getPassword()));
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
@@ -1216,7 +1269,7 @@ public class MenuGerencia extends javax.swing.JFrame{
     }//GEN-LAST:event_jPasswordField3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        VerificaInfoConta(Integer.parseInt(jTextField2.getText()));
+        VerificaInfoConta(Integer.valueOf(jTextField2.getText()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
@@ -1228,6 +1281,7 @@ public class MenuGerencia extends javax.swing.JFrame{
     }//GEN-LAST:event_jTextField5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jTextArea1.setText("");
         VerificaClientes(jComboBox1.getSelectedIndex());
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -1244,7 +1298,6 @@ public class MenuGerencia extends javax.swing.JFrame{
     }//GEN-LAST:event_jComboBox1MouseClicked
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
         if(jTextField4.getText().isEmpty())JOptionPane.showMessageDialog(null, "Número da conta inválido!");
         else if(jTextField8.getText().isEmpty() || Double.valueOf(jTextField8.getText()) < 0)JOptionPane.showMessageDialog(null, "Saldo invalido!");
         Aplica(Integer.valueOf(jTextField4.getText()), Double.valueOf(jTextField8.getText()));
@@ -1257,6 +1310,22 @@ public class MenuGerencia extends javax.swing.JFrame{
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         SetaTaxas(Integer.valueOf(jTextField16.getText()));
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        taxaContaP(Integer.valueOf(jTextField16.getText()), Double.valueOf(jTextField19.getText()));
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        retiradaGrande(Double.valueOf(jTextField14.getText()), Integer.valueOf(jTextField13.getText()));
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jTextField20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField20ActionPerformed
+
+    private void jTextField21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField21ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1293,32 +1362,66 @@ public class MenuGerencia extends javax.swing.JFrame{
         });
     }
     
+    public boolean retiradaGrande(double quantia, int nroConta){
+        if(quantia < 110000)
+        {
+            JOptionPane.showMessageDialog(null, "A quantia tem que superior a R$ 110.000,00");
+            return false;
+        }
+        else
+        {        
+            for(int i=0; i<GLogado.getClientes().size(); i++){
+                for(int j=0; j<GLogado.getClientes().get(i).getContas().size(); j++)
+                {
+                    if(GLogado.getClientes().get(i).getContas().get(j).getNumero() == nroConta)
+                    {
+                        GLogado.getClientes().get(i).getContas().get(j).Retira(quantia);
+                        JOptionPane.showMessageDialog(null, "Saque efetuado!");
+                        jTextField15.setText(String.valueOf(GLogado.getClientes().get(i).getContas().get(j).getSaldo()));
+                        return true;
+                    }
+                }
+            }
+        }
+        JOptionPane.showMessageDialog(null, "Clientes não existem, ou pertencem a outro gerente");
+        return false;  
+    }
+    
     public boolean Transfere(int nroConta1, int nroConta2, double saldo){
-        Cliente C1 = new Cliente();
-        Cliente C2 = new Cliente();
-        int i1, i2, j1, j2;
+        Conta C1 = new Conta();
+        Conta C2 = new Conta();
         if(nroConta1 == nroConta2){
             JOptionPane.showMessageDialog(null, "Insira contas diferentes!");
             return false;
         }
         else{
-            for(i1=0; i1<GLogado.getClientes().size(); i1++){
-                for(j1=0; j1<GLogado.getClientes().get(i1).getContas().size(); j1++){
-                    if(GLogado.getClientes().get(i1).getContas().get(j1).getNumero() == nroConta1) 
-                        break;
-                }
-            }
             for(int i=0; i<GLogado.getClientes().size(); i++){
                 for(int j=0; j<GLogado.getClientes().get(i).getContas().size(); j++){
                     if(GLogado.getClientes().get(i).getContas().get(j).getNumero() == nroConta1) 
-                        GLogado.getClientes().get(i).getContas().get(j);
+                        C1 = GLogado.getClientes().get(i).getContas().get(j);
+                    else if(GLogado.getClientes().get(i).getContas().get(j).getNumero() == nroConta2)
+                        C2 = GLogado.getClientes().get(i).getContas().get(j);
                 }
             }
+            
             if(C1 != null && C2 != null){
-                
-            }           
+                if(C1.getSaldo() > saldo)
+                {
+                    C2.Aplica(saldo);
+                    C1.Retira(saldo);
+                    JOptionPane.showMessageDialog(null, "Transferência realizada");
+                    return true;
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Conta de origem com saldo insuficiente");
+                    return false;
+                }            
+            }   
         }
-    }    
+        JOptionPane.showMessageDialog(null, "Clientes não existem, ou pertencem a outro gerente");
+        return false;
+    }  
+    
     public boolean SetaTaxas(int nroConta){
         for(int i=0; i<GLogado.getClientes().size(); i++)
         {
@@ -1335,7 +1438,7 @@ public class MenuGerencia extends javax.swing.JFrame{
                         }
                         else if(GLogado.getClientes().get(i).getContas().get(j).getTipo().equals("Poupanca"))
                         {
-                            jTextField18.setEnabled(true);
+                            jTextField19.setEnabled(true);
                             jButton9.setEnabled(true);
                             return true;
                         }
@@ -1356,9 +1459,50 @@ public class MenuGerencia extends javax.swing.JFrame{
             {
                 for(int j=0; j<GLogado.getClientes().get(i).getContas().size(); j++)
                 {
-                    if(GLogado.getClientes().get(i).getContas().get(j).getNumero() == nroConta) 
+                    if(GLogado.getClientes().get(i).getContas().get(j).getNumero() == nroConta)
+                    { 
+                        GLogado.getClientes().get(i).getContas().get(j).setLimite(limite);
+                        JOptionPane.showMessageDialog(null, "Limite aplicado");
+                        jTextField17.setEnabled(false);
+                        jTextField17.setText("");
+                        jTextField16.setText("");
+                        jButton8.setEnabled(false);                        
+                        return true;
+                    }
                 }
+            }
         }
+        else{
+            jTextField17.setText("");
+            JOptionPane.showMessageDialog(null, "Limite invalido!");           
+        }
+        return false;
+    }
+    
+        public boolean taxaContaP(int nroConta, double taxa){
+        if(taxa > 0){
+            for(int i=0; i<GLogado.getClientes().size(); i++)
+            {
+                for(int j=0; j<GLogado.getClientes().get(i).getContas().size(); j++)
+                {
+                    if(GLogado.getClientes().get(i).getContas().get(j).getNumero() == nroConta)
+                    { 
+                        GLogado.getClientes().get(i).getContas().get(j).setTaxaJuros(taxa);
+                        JOptionPane.showMessageDialog(null, "Taxa de juros aplicada");
+                        jTextField19.setEnabled(false);
+                        jTextField19.setText("");
+                        jTextField16.setText("");
+                        jButton9.setEnabled(false);                        
+                        return true;
+                    }
+                }
+            }
+        }
+        else{
+            jTextField17.setText("");
+            JOptionPane.showMessageDialog(null, "Limite invalido!");           
+        }
+        return false;
     }
     
     public boolean Aplica(int nroConta, double quantidade){           
@@ -1366,7 +1510,6 @@ public class MenuGerencia extends javax.swing.JFrame{
             for(int j=0; j<GLogado.getClientes().get(i).getContas().size(); j++){
                 if(GLogado.getClientes().get(i).getContas().get(j).getNumero() == nroConta){
                     GLogado.getClientes().get(i).getContas().get(j).Aplica(quantidade);
-                    JOptionPane.showMessageDialog(null, "Saldo aplicado!");
                     jTextField9.setText(String.valueOf("R$ " + GLogado.getClientes().get(i).getContas().get(j).getSaldo()));                    
                     return true;
                 }                  
@@ -1379,14 +1522,15 @@ public class MenuGerencia extends javax.swing.JFrame{
     public boolean verificaCadastro(String NomeInserido, String SenhaInserida, int TipoInserido){
         if(NomeInserido.isEmpty() && SenhaInserida.isEmpty())JOptionPane.showMessageDialog(null, "Campos vazios!");
         else if(NomeInserido.isEmpty())JOptionPane.showMessageDialog(null, "Nome não inserido");
-        else if(SenhaInserida.isEmpty())JOptionPane.showMessageDialog(null, "Senha não inserida");
-        else if(TipoInserido == 0)JOptionPane.showMessageDialog(null, "Escolha o tipo de conta");          
+        else if(SenhaInserida.isEmpty())JOptionPane.showMessageDialog(null, "Senha não inserida");        
         else{
             try{          
                 String Tipo;
-                if(TipoInserido == 1){
+                if(TipoInserido == 0){
                     Tipo = "Cliente";
                     GLogado.CadastraCliente(NomeInserido, SenhaInserida);
+                    jTextField18.setText("");
+                    jPasswordField1.setText("");
                 }
                 else {
                     Tipo = "Gerente";
@@ -1436,17 +1580,19 @@ public class MenuGerencia extends javax.swing.JFrame{
         jTextField6.setText("");
         jTextArea2.setText("");
         jTextField7.setText("");  
+        jTextField20.setText("");
+        jTextField21.setText("");
         for(int i=0; i<GLogado.getClientes().size(); i++){
-            C = GLogado.getClientes().get(i);
-            
-            
+            C = GLogado.getClientes().get(i);                      
             for(int j=0; j<C.getContas().size(); j++){
                 if(C.getContas().get(j).getNumero() == CodConta){
                     jTextField3.setText(C.getNome());
-                    jTextField5.setText(String.valueOf("R$ " + C.getContas().get(i).getSaldo()));
-                    jTextField6.setText(C.getContas().get(i).getTipo());
-                    jTextArea2.setText(C.getContas().get(i).getExtrato());
-                    jTextField7.setText(String.valueOf(C.getContas().get(i).getNumero()));
+                    jTextField5.setText(String.valueOf("R$ " + C.getContas().get(j).getSaldo()));
+                    jTextField6.setText(C.getContas().get(j).getTipo());
+                    jTextArea2.setText(C.getContas().get(j).getExtrato());
+                    jTextField7.setText(String.valueOf(C.getContas().get(j).getNumero()));
+                    if(C.getContas().get(j).getTipo().equals("Especial"))jTextField21.setText(String.valueOf(C.getContas().get(j).getLimite()));
+                    else if(C.getContas().get(j).getTipo().equals("Poupanca"))jTextField20.setText(String.valueOf(C.getContas().get(j).getTaxaJuros()));
                     return true;
                 }
             }           
@@ -1457,16 +1603,57 @@ public class MenuGerencia extends javax.swing.JFrame{
     
     public void VerificaClientes(int id){
         Cliente C = new Cliente();
-        for(int i=0; i<GLogado.getClientes().size(); i++){
-            C = GLogado.getClientes().get(i);
-            
-            for(int j=0; j<C.getContas().size(); j++)
-                jTextArea1.setText(jTextArea1.getText() + "Conta " + C.getContas().get(j).getTipo() + "\tNúmero: " + C.getContas().get(j).getNumero()+ "\n");           
+            C = GLogado.getClientes().get(id);           
+            for(int i=0; i<C.getContas().size(); i++){
+                jTextArea1.setText(jTextArea1.getText() + "Conta " + C.getContas().get(i).getTipo() + "    /   Número: " + C.getContas().get(i).getNumero()+ "\n");  
         }
     }
-    
-    
-    public void AlteraSenha(){
+
+    public boolean AlteraSenha(String SenhaAtual, String SenhaNova){
+        int flag=0;
+        String dados = "";
+        if(SenhaAtual.isEmpty() || SenhaNova.isEmpty())JOptionPane.showMessageDialog(null, "Complete os dados corretamente!");  
+        
+        try {
+              
+            File ArquivoContas = new File("D:\\Usuario\\Documents\\PUC-Campinas\\4 semestre\\Paradigmas B\\Projeto/contas.txt");
+            Scanner LeContas = new Scanner(ArquivoContas);
+            while(LeContas.hasNextLine())
+            {         
+                
+                String TipoCadastrado = LeContas.nextLine();
+                dados = dados + TipoCadastrado + "\n";
+                String NomeCadastrado = LeContas.nextLine();
+                dados = dados + NomeCadastrado + "\n";
+                String SenhaCadastrada = LeContas.nextLine();
+                
+                if(NomeCadastrado.equals(GLogado.getNome()) && SenhaAtual.equals(SenhaCadastrada))
+                {
+                    flag=1;
+                    dados = dados + SenhaNova + "\n";   
+                    GLogado.setSenha(SenhaNova);
+                }  
+                else dados = dados + SenhaCadastrada + "\n";
+            } 
+            if(flag == 1){
+                FileWriter Arq = new FileWriter("D:\\Usuario\\Documents\\PUC-Campinas\\4 semestre\\Paradigmas B\\Projeto/contas.txt", false);
+                PrintWriter EscreveContas = new PrintWriter(Arq); 
+                EscreveContas.println(dados);
+                EscreveContas.flush();
+                EscreveContas.close();
+                JOptionPane.showMessageDialog(null, "Senha alterada com suceso!");  
+                return true;
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Senha incorreta!");
+                return false; 
+            }
+        }
+        catch (IOException Ex) {
+           Ex.printStackTrace();      
+        }
+        JOptionPane.showMessageDialog(null, "Senha incorreta!");
+        return false;             
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1544,6 +1731,8 @@ public class MenuGerencia extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1585,6 +1774,8 @@ public class MenuGerencia extends javax.swing.JFrame{
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
